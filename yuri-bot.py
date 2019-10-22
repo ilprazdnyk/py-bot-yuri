@@ -35,3 +35,13 @@ def caps(update, context):
 
 caps_handler = CommandHandler('caps', caps)
 dispatcher.add_handler(caps_handler)
+
+
+def master(update, context):
+    text = ' https://www.reddit.com/r/blackmagicfuckery/comments/b32e3o/pole_master/' \
+           '?utm_source=share&utm_medium=ios_app&utm_name=iossmf'
+    context.bot.send_message(chat_id=update.effective_chat.id, text=text)
+
+
+master_handler = CommandHandler('master', master)
+dispatcher.add_handler(master_handler)
