@@ -19,13 +19,13 @@ dispatcher.add_handler(start_handler)
 updater.start_polling()
 
 
-def temperature(update, context):
+def temp(update, context):
     weather_text = weather.prague_weather()
     context.bot.send_message(chat_id=update.effective_chat.id, text=weather_text)
 
 
-temperature_handler = CommandHandler('temperature', temperature)
-dispatcher.add_handler(temperature_handler)
+temp_handler = CommandHandler('temp', temp)
+dispatcher.add_handler(temp_handler)
 
 
 def caps(update, context):
