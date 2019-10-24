@@ -1,8 +1,10 @@
 import logging
 import weather
+from texter import echo
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
 from telegram.ext import MessageHandler, Filters
+
 
 updater = Updater(token='842440069:AAGNacGGPSgufJmJgeyCo29sB-zMp5vsp9Q', use_context=True)
 
@@ -45,3 +47,9 @@ def master(update, context):
 
 master_handler = CommandHandler('master', master)
 dispatcher.add_handler(master_handler)
+
+# The handler is in a separate script texter.py
+
+
+echo_handler = MessageHandler(Filters.text, echo)
+dispatcher.add_handler(echo_handler)
