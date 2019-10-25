@@ -13,9 +13,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 dispatcher = updater.dispatcher
 
 #defenition of the function which is going to be called after someone 
-#starts the dialogue with the bot or types the start command#defenition of the function which is going to be called after someone 
-#starts the dialogue with the bot or types the start command#defenition of the function which is going to be called after someone 
-#starts the dialogue with the bot or types the start command
+#starts the dialogue with the bot or types the /start command
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
 
@@ -25,7 +23,7 @@ dispatcher.add_handler(start_handler)
 updater.start_polling()
 
 #defenition of the function which is going to be called after someone 
-#types the temp command
+#types the /temp command, the source is weather.py script
 def temp(update, context):
     weather_text = weather.prague_weather()
     context.bot.send_message(chat_id=update.effective_chat.id, text=weather_text)
@@ -34,12 +32,12 @@ def temp(update, context):
 temp_handler = CommandHandler('temp', temp)
 dispatcher.add_handler(temp_handler)
 
-
+#the defenition of a caps function, just like with the prvious ones
 def caps(update, context):
     text_caps = ' '.join(context.args).upper()
     context.bot.send_message(chat_id=update.effective_chat.id, text=text_caps)
 
-
+#and now creation and activation of the handler, same as before
 caps_handler = CommandHandler('caps', caps)
 dispatcher.add_handler(caps_handler)
 
