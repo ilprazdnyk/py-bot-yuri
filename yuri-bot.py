@@ -1,4 +1,4 @@
-#importing
+#importing libraries
 import logging
 import weather
 from texter import echo
