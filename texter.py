@@ -1,3 +1,4 @@
+# a simple callback function for the message handler, which counts number of symbols in a new message
 def echo(update, context):
     sentence = update.message.text
     result = len(sentence)
