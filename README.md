@@ -5,4 +5,5 @@ My ongoing project - a telegram chat-bot made with python.
   The bot is deployed to amazon ec-2 machine.
 
   The generative mode is going o be implemented using OpenAI's gpt-2 model
+  Right now i am having trouble with running the gpt-2 locally so I am setting up google collab notebook for development of the bot
 
